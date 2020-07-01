@@ -1,0 +1,10 @@
+{
+    apps : [
+      {
+        name: "macmod-backend",
+        script: "sudo run_backend.sh",
+        interpreter: "sh",
+        args: ""
+      }
+    ]
+  }

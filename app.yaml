@@ -1,0 +1,6 @@
+instance_class: F4
+service: macmod-backend
+runtime: python37
+handlers: 
+- url: .*
+  script: auto
