@@ -8,7 +8,7 @@ import gridfs
 import json
 import os
 
-db = MongoClient("mongodb+srv://vseendbAdmin:hQix4ujOqra7NEx8@vseen-cluster-0-wwqiu.mongodb.net/macmod?retryWrites=true&w=majority").macmod
+db = MongoClient("mongodb+srv://<URI>?retryWrites=true&w=majority").macmod
 fs = gridfs.GridFS(db)
 
 # method to send all files in a directory to mongoDB GridFS
@@ -214,7 +214,7 @@ def create_json_from_xlsx(filename,sheetnames):
         df['bondedphase'] = sheetnames[i]
         # create a json file for each sheet in the dataframe record
         df.to_json(f'{i}.json',orient='records')
-        cmds = ['mongoimport','--host','vseen-cluster-0-shard-0/vseen-cluster-0-shard-00-00-wwqiu.mongodb.net:27017,vseen-cluster-0-shard-00-01-wwqiu.mongodb.net:27017,vseen-cluster-0-shard-00-02-wwqiu.mongodb.net:27017', '--ssl', '--username', 'vseendbAdmin', '--password', 'hQix4ujOqra7NEx8', '--authenticationDatabase', 'admin', '--db', 'macmod', '--collection', 'phasepages', '--jsonArray' ,f'/Users/user/Desktop/my-projects/macmod/macmod-backend-prod/macmod/main/{i}.json']
+        cmds = ['mongoimport','--host','URI', '--ssl', '--username', '<USERNAME>', '--password', '<AUTH>', '--authenticationDatabase', 'admin', '--db', '<DATABASE>', '--collection', '<COLLECTION>', '--jsonArray' ,f'<FILE>']
         k = subprocess.Popen(cmds)
         try:
             k.wait(timeout=5)
