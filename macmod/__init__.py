@@ -15,7 +15,7 @@ db = MongoEngine()
 
 def create_app(app_config=None):
     app = Flask(__name__, instance_relative_config=True)
-    CORS(app, resources={r"*": {"origins": "*"}}) # the only one domain with access
+    CORS(app, resources={r"*": {"origins": "*"}}) # update with HOSTNAME to provide only one domain with access, * provides access to all
     bcrypt = Bcrypt(app)
     jwt = JWTManager(app)
 
