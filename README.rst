@@ -1,4 +1,4 @@
-e-commerce platform backend, can serve as a base for projects which consumes mongodb documents and advanced filters.
+e-commerce platform backend, can serve as a base for projects which consumes mongodb documents and advanced filters. As well as GridFS for uploading and retrieving files.
 
 Initial Setup Backend
 =====================
