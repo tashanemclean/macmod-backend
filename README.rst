@@ -1,3 +1,5 @@
+e-commerce platform backend, can serve as a base for projects which consumes mongodb documents and advanced filters.
+
 Initial Setup Backend
 =====================
 
@@ -57,7 +59,7 @@ Database Setup
     * db.createUser(
         {
             user:"useradmin", 
-            pwd:"macmod1234", 
+            pwd:"<password>", 
             roles: [{
                     role:"userAdminAnyDatabase", 
                     db:"admin"
@@ -85,7 +87,7 @@ Database Setup
 
 
 10. command to import json array to database from command line: 
-    mongoimport --host vseen-cluster-0-shard-0/vseen-cluster-0-shard-00-00-wwqiu.mongodb.net:27017,vseen-cluster-0-shard-00-01-wwqiu.mongodb.net:27017,vseen-cluster-0-shard-00-02-wwqiu.mongodb.net:27017 --ssl --username vseendbAdmin --password hQix4ujOqra7NEx8 --authenticationDatabase admin --db <DATABASE> --collection <COLLECTION> --jsonArray <PATH TO FILE>
+    mongoimport --host --ssl --username <username> --password <password> --authentication <clustername-uri> admin --db <DATABASE> --collection <COLLECTION> --jsonArray <PATH TO FILE>
 
 
 NOTES: 
